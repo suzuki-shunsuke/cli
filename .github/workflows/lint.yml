@@ -15,6 +15,7 @@ permissions:
 
 jobs:
   format:
+    timeout-minutes: 30
     runs-on: ubuntu-latest
     steps:
       - name: Set up Go
@@ -35,6 +36,7 @@ jobs:
           test -z "$non_formatted_files"
 
   staticcheck:
+    timeout-minutes: 30
     runs-on: ubuntu-latest
     steps:
       - name: Set up Go
@@ -52,6 +54,7 @@ jobs:
         run: staticcheck ./...
 
   golangci-lint:
+    timeout-minutes: 30
     runs-on: ubuntu-latest
 
     steps:
